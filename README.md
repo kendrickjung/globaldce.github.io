@@ -1,2 +1,2 @@
-# globaldce.github.io
+# globaldce website codebase
 globaldce website
