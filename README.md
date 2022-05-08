@@ -1,2 +1,2 @@
 # globaldce website codebase
-globaldce website
+globaldce website codebase
