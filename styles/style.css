@@ -4,6 +4,9 @@ body {
   color: #FFFFFF;
 /*transition: background-color 0.7s linear;*/
 padding: 50px;
+-webkit-text-size-adjust: none;
+-moz-text-size-adjust: none;
+-ms-text-size-adjust: none;
 }
 body:hover {
    background-color: #181818;      
