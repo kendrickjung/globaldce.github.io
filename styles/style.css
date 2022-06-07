@@ -18,21 +18,51 @@ body:hover {
 padding-left: 20px;
   }
 
-  .floating-menu {
-    font-family: sans-serif;
-    background: #484848;
-    padding-left: 40px;
-padding-right: 40px;
-   padding-top: 10px;
-padding-bottom: 10px;
-    /*width: 505px;*/
 
-    /*z-index: 100;*/
-    position: fixed;
-    top: 10px;
-    left: 80px;
-opacity:0.9;
-transition: opacity 0.5s linear;
+  @media screen and (orientation:portrait) {
+    .floating-menu {
+      
+      font-family: sans-serif;
+      background: #484848;
+      padding-left: 4%;
+  padding-right: 4%;
+     padding-top: 1%;
+  padding-bottom: 1%;
+     /* width: 80%;*/
+  
+      font-size: 1.5em;
+      /*z-index: 100;*/
+      position: fixed;
+      top: 1%;
+      left: 2%;
+  opacity:0.9;
+  transition: opacity 0.5s linear;
+    }
+  }
+  @media screen and (orientation:landscape) {
+    .floating-menu br {
+      display: none; /* hide the BR tag for wider screens (i.e. disable the line break) */
+    }
+    .floating-menu {
+      
+
+      font-family: sans-serif;
+      background: #484848;
+      padding-left: 4%;
+  padding-right: 4%;
+     padding-top: 1%;
+  padding-bottom: 1%;
+      /*width: 70%;*/
+      
+      font-size: 1.5em;
+      /*z-index: 100;*/
+      position: fixed;
+      top: 1%;
+      left: 2%;
+  opacity:0.9;
+  transition: opacity 0.5s linear;
+    }
+
   }
 .floating-menu:hover {
    opacity:1;     
@@ -43,7 +73,7 @@ transition: opacity 0.5s linear;
 
 margin: 10px 0;
     text-align:center; 
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
     display: inline;
   
     color: #FFDF00;
