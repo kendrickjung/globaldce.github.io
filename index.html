@@ -1,82 +1,504 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-  <meta name="description" content="Free Web tutorials">
-  <meta name="keywords" content="Nondeterministic, Decentralized, Applications, Decentralization, Collaboration,  Blockchain, Cryptocurrency, Web3">
-  <meta name="author" content="global decentralized collaboration environment developers">
-  
- <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0"><!content="width=1024"> 
-
-  <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <title>Welcome</title>
-  <link rel="icon" type="image/x-icon" href="./Icon.png">
-  <nav class="floating-menu">
-    
-  <a href="./index.html"><goldenlink>DOWNLOAD</goldenlink></a><br>
-  <!a href="./html/docs/introduction.html"><!DOCS><!/a><!br>
-  <!a href="/html/tutorials.html"><!TUTORIALS><!/a><!br>
-  <a href="./html/faq.html">FAQ</a><br>
-  <a href="./html/news/news.html">NEWS</a><br>
-  <a href="https://github.com/globaldce/globaldce-gateway">GITHUB</a><br>
-  
-  </nav>
-  
-</head>
-
-<body >
-  
-
-  <main>
-  <br><br><br><br><h1>globaldce</h1>
-  <h2>Nondeterministic decentralized applications platform powered by its native cryptocurrency</h2>
-  </main>
-  <!meta name="viewport" content="width=1024">
- <!img src="background.png" style="width:100%;">
-
-<!h2><!This is heading 2><!/h2>
-
-
-<p2>Globaldce is a decentralized collaboration environment that enables users to create, manage and execute nondeterministic decentralized applications (Compute, Storage, Data feed, Insurance, and much more).<br><br></p2>
-
-
-<br>
-<!p2><!Download globaldce-desktop and explore the power of nondeterministic decentralized applications:><!br><!br><!/p2>
-<p2>Download globaldce gateway to run a globaldce node:<br><br></p2>
-<button class="btn"><btn-text><a href="https://github.com/globaldce/globaldce-gateway/releases/download/v0.2.0/windows-amd64.zip"><i class="fa fa-windows">&nbsp;&nbsp;</i>Windows amd64</a></btn-text></button><br>
-<br><br>
-<br><br>
-<br><br>
-<p2><b>What is globaldce?</b><br><br></p2>
-<p2>Even though  cryptocurrency  and blockchain technologies have the potential to disrupt every aspect of our daily life their use cases are currently still limited to financial services. Most real-world situations can not be tackled using existing dapps platforms and this due to the fact they are missing a crucial aspect: decentralized collaboration.<br></p2>
-<br>
-<p2>Up until this point innovation in nondeterministic decentralized applications such as storage and datafeeds have been highly fragmented and implementing any of these technologies has required creating an entire protocol layer or even a specialized blockchain. However, these innovations can be made an order of magnitude easier to implement if only  there was a broader foundational layer for all of these dapps to be built up. And this need is what we seek to satisfy.<br></p2>
-<br>
-<p2>While other blockchains only provide deterministic functionalities and force teams to rely on third party services for nondeteministic aspects, we believe here that blockchain based decentralized collaboration coupled with smart contract functionalities can enable nondeterministic decentralized applications and unleash the full potential of web 3.<br></p2>
-<br><br>
-
-<p2><b>What can you do with globaldce?</b><br><br></p2>
-<p2>Globaldce can be used to build nondeterministic decentralized applications that provide various services such as: <br></p2>
-<ul>
-  <li><p2>Compute and storage<br></p2></li>
-  <li><p2>Data feeds<br></p2></li>
-  <li><p2>Insurance<br></p2></li>
-  <li><p2>Biometrics<br></p2></li>
-  <li><p2>Distributed energy trading<br></p2></li>
-  <li><p2>Water resources management<br></p2></li>
-  <li><p2>Supply chain tracking<br></p2></li>
-  <li><p2>And much more !<br></p2></li>
-</ul>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-</body>
-    
-<div class="footer-menu">
-       © global decentralized collaboration environment developers 2020-2022 released under <a  href="http://github.com/" target="_blank">the MIT license</a>
+	<head>
+		<meta name="description" content="Welcome">
+		<meta name="keywords" content="Nondeterministic, Decentralized, Applications, Decentralization, Collaboration,  Blockchain, Cryptocurrency, Web3">
+		<meta name="author" content="global decentralized collaboration environment developers">
+	  
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!content="width=1024"> 
+		<link rel="stylesheet" href="./styles/style.css"/>
+		<!link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  
+		<title>Welcome</title>
+		<link rel="icon" type="image/x-icon" href="./Icon.png">
+		<nav class="floating-menu">
+	  
+		  <a href="./index.html"><goldenlink>WALLET</goldenlink></a><br>
+		  <a href="./html/download/download.html">DOWNLOAD</a><br>
+			<!a href="./docs/introduction.html"><!DOCS><!/goldenlink><!/a><!br>
+			<!a href="./html/tutorials/tutorials.html"><!TUTORIALS><!/a><!br>
+			<a href="./html/faq/faq.html">FAQ</a><br>
+			<a href="./html/news/news.html">NEWS</a><br>
+			<a href="https://github.com/globaldce/globaldce-gateway">GITHUB</a><br>
+		  </nav>
+	  
+	  </head>
+	  
+<body>
+	<main>
+		<br><br><br><br>
+	  </main>
+<div id="initwalletdiv-id" class="initwalletdiv">
+	<p>Before you can use this web app you need to init a wallet</p>
+	<button class="button simplebutton" onclick="InitWalletFunc()" >INIT WALLET</button>
 </div>
-  
+<div id="floatingmenu-id" class="floatingmenu">
+	<button class="button simplebutton" onclick="SendTransactionModalDisplayFunc()" >SEND COINS</button><br>
+	<button class="button simplebutton" onclick="ReceiveCoinsModalDisplayFunc()" >RECEIVE COINS</button><br>
+</div>
+<div id="mainwalletdiv-id" class="mainwalletdiv">
+	<p>Wallet overview</p>
+	<p><span id="mainwallet-totalbalance-id">WALLET SYNCING ONGOING ...</span></p>
+</div>
+
+<!-- InitWallet Password Modal Begins -->
+<div id="InitWalletPasswordModal-id" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="InitWalletPasswordModalCloseButton" class="close">&times;</span>
+    <p>In order to use this webinterface, you need to choose a password that will init within your webpage your Sequential Deterministic wallet.</p>
+    <p>Enter password</p>
+	<input type="text" id="enteredpasswordtext-id" value=""><br>
+	<button class="button simplebutton" onclick="DisplayWalletFunc()" >OK</button><br>
+  </div>
+</div>
+<!-- InitWallet Password Modal Ends -->
+
+<!-- GetFreeCoinsModal Begins -->
+<div id="GetFreeCoinsModal-id" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="GetFreeCoinsModalCloseButton" class="close">&times;</span>
+    <p>Getting free coins</p>
+	<div id="captchaimage"></div>
+  	<label >Enter Captcha Text:</label><br>
+  	<input type="text" id="enteredcaptchatext-id" value=""><br>
+	<button class="button simplebutton" onclick="submitRequestFreeCoinsCaptcha()" >OK</button><br>
+  </div>
+</div>
+<!-- GetFreeCoinsModal Ends -->
+<!-- SendTransactionModal Begins -->
+<div id="SendTransactionModal-id" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <span id="SendTransactionModalCloseButton" class="close">&times;</span>
+    <p></p>
+  	<label >Transaction to be sent</label><br>
+	<ul id="transactionrecipientlist-id" style="list-style-type: none;"></ul>
+  	<br>
+	
+	<button class="button simplebutton" onclick="submitRequestTransaction()" >SEND</button><br><br><br><br><br><br><br><br>
+  </div>
+</div>
+<!-- TODO>
+<!-- button class="button simplebutton" onclick="addTransactionRecipient()" ><!ADD RECIPIENT></button><!br>
+<!-- SendTransactionModal Ends -->
+
+<!-- ReceiveCoinsModal Begins -->
+<div id="ReceiveCoinsModal-id" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="ReceiveCoinsModalCloseButton" class="close">&times;</span>
+    <p></p>
+  	<label >Your wallet addresses:</label><br>
+	<ul id="walletaddresseslist-id" ></ul>
+
+  	<br>
+	<button class="button simplebutton" onclick="generateAddress()" >GENERATE NEW ADDRESS</button><br>
+  </div>
+</div>
+<!-- ReceiveCoinsModal Ends -->
+<script src="js/globaldce-js/dist/bundle-hashing.js"></script>
+<script src="js/globaldce-js/dist/bundle-transaction.js"></script>
+<script src="js/globaldce-js/dist/bundle-wallet.js"></script>
+<!script src="js/ui.js"><!/script>
+<!script src="js/calls.js"><!/script>
+<script>
+
+const wallet = require('wallet');
+let mainwlt
+var BootstrapURL='https://globaldce-faucet.herokuapp.com'
+setInterval(UpdateMainwlt, 10000);
+setInterval(DisplayMainwltBalance, 30000);
+
+//////////////////////////////////////////////////////////////////////////////////
+//InitWallet Password Modal Script Begins 
+// Get the modal
+var InitWalletPasswordModal = document.getElementById("InitWalletPasswordModal-id");
+
+// Get the button that opens the modal
+//var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var InitWalletPasswordModalCloseSpan = document.getElementById("InitWalletPasswordModalCloseButton");
+
+// When the user clicks the button, open the modal 
+//btn1.onclick = function() {
+//  modal1.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+InitWalletPasswordModalCloseButton.onclick = function() {
+  InitWalletPasswordModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == InitWalletPasswordModal) {
+    InitWalletPasswordModal.style.display = "none";
+  }
+}
+// InitWallet Password Modal Script Ends 
+//////////////////////////////////////////////////////////////////////////////////
+//GetFreeCoins Modal Script Begins 
+// Get the modal
+var GetFreeCoinsModal = document.getElementById("GetFreeCoinsModal-id");
+
+// Get the button that opens the modal
+//var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var GetFreeCoinsModalCloseSpan = document.getElementById("GetFreeCoinsModalCloseButton");
+
+// When the user clicks the button, open the modal 
+//btn1.onclick = function() {
+//  modal1.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+GetFreeCoinsModalCloseButton.onclick = function() {
+  GetFreeCoinsModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == GetFreeCoinsModal) {
+    GetFreeCoinsModal.style.display = "block";
+  }
+}
+// GetFreeCoins Modal Script Ends 
+//////////////////////////////////////////////////////////////////////////////////
+//SendTransaction Modal Script Begins 
+// Get the modal
+var SendTransactionModal = document.getElementById("SendTransactionModal-id");
+
+// Get the button that opens the modal
+//var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var SendTransactionModalCloseSpan = document.getElementById("SendTransactionModalCloseButton");
+
+// When the user clicks the button, open the modal 
+//btn1.onclick = function() {
+//  modal1.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+SendTransactionModalCloseButton.onclick = function() {
+  SendTransactionModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == SendTransactionModal) {
+    SendTransactionModal.style.display = "block";
+  }
+}
+// SendTransaction Modal Script Ends 
+
+//ReceiveCoinsModalDisplayFunc//
+//////////////////////////////////////////////////////////////////////////////////
+//ReceiveCoins Modal Script Begins 
+// Get the modal
+var ReceiveCoinsModal = document.getElementById("ReceiveCoinsModal-id");
+
+// Get the button that opens the modal
+//var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var ReceiveCoinsModalCloseSpan = document.getElementById("ReceiveCoinsModalCloseButton");
+
+// When the user clicks the button, open the modal 
+//btn1.onclick = function() {
+//  modal1.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+ReceiveCoinsModalCloseButton.onclick = function() {
+  ReceiveCoinsModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == ReceiveCoinsModal) {
+    ReceiveCoinsModal.style.display = "block";
+  }
+}
+// ReceiveCoins Modal Script Ends 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+function UpdateMainwlt(){
+	if (mainwlt==undefined) {
+		return
+	}
+	submitRequestAddressAssetValue()
+	//console.log('Main Wallet Updated')
+}
+function DisplayMainwltBalance(){
+	if (mainwlt==undefined) {
+		return
+	}
+	//if (!SyncingDone) {
+	//	return
+	//}
+	var TotalBalance = mainwlt.GetBalance();
+	mainwlt.Display()
+	document.getElementById("mainwallet-totalbalance-id").innerHTML = "Total Balance: "+(TotalBalance/1000000.0).toString();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+document.getElementById('floatingmenu-id').style.visibility='hidden'//:
+document.getElementById('mainwalletdiv-id').style.display='none'
+function InitWalletFunc() {
+	
+	InitWalletPasswordModal.style.display = "block";
+}
+function DisplayWalletFunc() {
+	InitWalletPasswordModal.style.display = "none";
+	document.getElementById('initwalletdiv-id').style.display='none'
+	document.getElementById('floatingmenu-id').style.visibility='initial'
+	document.getElementById('mainwalletdiv-id').style.display='block'
+	var passwordtext=document.getElementById("enteredpasswordtext-id").value
+	//console.log("password",passwordtext)
+	
+	
+	mainwlt= new wallet.Wallet(passwordtext)//("cool")
+}
+/*
+//GetFreeCoins
+function GetFreeCoinsModalDisplayFunc() {
+	submitRequestFreeCoins()
+	document.getElementById("enteredcaptchatext-id").value=""
+	GetFreeCoinsModal.style.display = "block";
+	
+
+
+
+}
+*/
+//SendTransaction
+function SendTransactionModalDisplayFunc() {
+	
+	//document.getElementById("enteredcaptchatext-id").value=""
+	SendTransactionModal.style.display = "block";
+	sendcoinsnbrecipient=0
+	document.getElementById("transactionrecipientlist-id").innerHTML=""
+	addTransactionRecipient()
+
+}
+//ReceiveCoins
+function ReceiveCoinsModalDisplayFunc() {
+	
+	//document.getElementById("enteredcaptchatext-id").value=""
+	ReceiveCoinsModal.style.display = "block";
+	WalletAddressesListDisplayFunc()
+	
+
+}
+/////
+function WalletAddressesListDisplayFunc() {
+	//
+	document.getElementById("walletaddresseslist-id").innerHTML=""
+	for (let i = 0;i < mainwlt.InfoArray.length; i++){
+
+		// Create an "li" node:
+		const node = document.createElement("li");
+
+		// Create a text node:
+		const textnode = document.createTextNode(mainwlt.GetAddress(i));
+
+		// Append the text node to the "li" node:
+		node.appendChild(textnode);
+
+		// Append the "li" node to the list:
+		document.getElementById("walletaddresseslist-id").appendChild(node);
+	}
+}
+/////
+function  generateAddress(){
+	mainwlt.CreateNewKeyPair()
+	WalletAddressesListDisplayFunc()
+}
+
+///////
+var sendcoinsnbrecipient=0
+
+function addTransactionRecipient() {
+
+// Create an "li" node:
+const node = document.createElement("li");
+
+// Create a div node:
+//const divnode = document.createTextNode("Water");
+const divnode = document.createElement("div");
+divnode.innerHTML = '<br><label >Recipient '/*+sendcoinsnbrecipient.toString()*/+':</label><br><label >Enter Address:</label><br><input type="text" id="enteredaddress'+sendcoinsnbrecipient.toString()+'-id" value=""><br><label >Enter Amount:</label><br><input type="text" id="enteredamount'+sendcoinsnbrecipient.toString()+'-id" value=""><br>';
+
+
+// Append the text node to the "li" node:
+node.appendChild(divnode);
+//node.style.list-style-type="none";
+
+// Append the "li" node to the list:
+document.getElementById("transactionrecipientlist-id").appendChild(node);
+//document.getElementById("transactionrecipientlist-id").style.list-style-type="none";
+sendcoinsnbrecipient++
+}
+function submitRequestTransaction(){
+	//for (let i = 0;i < sendcoinsnbrecipient; i++) {
+	//	console.log('***',document.getElementById('enteredaddress'+i.toString()+'-id').value)
+	//	console.log('***',document.getElementById('enteredamount'+i.toString()+'-id').value)
+	//}
+
+var tmpaddr=document.getElementById('enteredaddress0-id').value
+var tmpamount=parseInt(document.getElementById('enteredamount0-id').value)
+//var tmpfeeamount=document.getElementById('feeamount-id').value//
+
+if (!(Number.isInteger(tmpamount))){
+	alert("Amount to be sent must be a integer");
+	return
+}
+if (tmpamount<=0){
+	alert("Amount to be sent must be a postive amount");
+	return
+}
+
+if(!(StringIsHexString(tmpaddr))) {
+    alert('recipient address must be a valid hex string');
+	return
+}
+ 
+
+if(tmpaddr.length!=64) {
+    alert('recipient address length is incorrect');
+	return
+}
+var sendingtx=mainwlt.SetupTransactionToPublicKeyHash(tmpaddr,tmpamount*1000000,500)//(pubkeyhash,amount,fee)
+console.log("*******",sendingtx)
+	fetch(BootstrapURL+"/requesttransaction", {
+	  method: "POST",
+	  headers: new Headers({
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+	  }),
+	  //serialized JSON body
+	  body: JSON.stringify({
+		//captcha:captchatext,
+		serializedtransaction:sendingtx.SerializeToBuffer().toString('hex')
+	  })
+	})
+
+SendTransactionModal.style.display = "none";
+}
+
+function StringIsHexString(inputString){
+	var re = /[0-9A-Fa-f]{6}/g;
+
+	if (re.test(inputString)) {
+		re.lastIndex = 0;
+		return true
+	} else {
+		re.lastIndex = 0;
+		return  false
+	}
+}
+/*
+function submitRequestFreeCoins() {
+	fetch(BootstrapURL+f"/requestfreecoins", {
+	  method: "POST",
+	  headers: new Headers({
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+	  }),
+	  //serialized JSON body
+	  body: JSON.stringify({
+	  	//name: "myName",
+	  	//password: "myPassword"
+		address:mainwlt.GetLastAddress()
+	  })
+	})
+	.then(res => res.blob()) // Gets the response and returns it as a blob
+	.then(blob => {
+	//.then( (dataurl) => { 
+	   //response
+		let dataurl = URL.createObjectURL(blob);	
+	   	//const imageObjectURL =  URL.createObjectURL(dataURLToBlob(e.target.files[0]))//URL.createObjectURL(imageBlob);
+	   	//console.log(dataurl);
+		document.getElementById("captchaimage").innerHTML = '<img src="'+dataurl+'" alt="captcha">'
+		
+	});
+}
+*/
+/*
+function submitRequestFreeCoinsCaptcha() {
+	captchatext=document.getElementById("enteredcaptchatext-id").value
+	//console.log("captchatext",captchatext)
+	fetch("/requestfreecoinscaptcha", {
+	  method: "POST",
+	  headers: new Headers({
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+	  }),
+	  //serialized JSON body
+	  body: JSON.stringify({
+	  	//password: "myPassword"
+		captcha:captchatext,
+		address:mainwlt.GetLastAddress()
+	  })
+	})
+
+GetFreeCoinsModal.style.display = "none";
+}
+*/
+function submitRequestAddressAssetValue() {
+	for (let i = 0;i < mainwlt.InfoArray.length; i++) {
+		//var tmpassetindex=0
+		//var addressupdatedone=false
+			for (let tmpassetindex = 0;tmpassetindex < mainwlt.InfoArray[i].AssetArray.length+5; tmpassetindex++) {
+			fetch(BootstrapURL+"/requestaddressassetvalue", {
+			  method: "POST",
+			  headers: new Headers({
+			    'Accept': 'application/json',
+			    'Content-Type': 'application/json'
+			  }),
+			  //serialized JSON body
+			  body: JSON.stringify({
+			  	//name: "myName",
+			  	//password: "myPassword"
+				address:mainwlt.GetAddress(i),
+				assetindex:tmpassetindex
+			  })
+			})
+			.then(res => res.json()) // Gets the response
+			.then(obj => {
+				//console.log('respose obj',obj)
+
+				for (let k = 0; k < mainwlt.InfoArray.length; k++) {
+					if (obj.address==mainwlt.GetAddress(k)){
+						
+						if ((obj.statestring=='UNSPENT')&&(tmpassetindex >= mainwlt.InfoArray[i].AssetArray.length)){
+							//addressupdatedone=true
+							mainwlt.AddAsset(k,obj.hash,obj.index,obj.value,'UNSPENT')
+							console.log('Asset added')
+							
+						}
+					}
+				}
+				//console.log('mainwlt',mainwlt.InfoArray)
+			});
+			//tmpassetindex++
+			//await sleep(1000);
+		}
+	}
+}
+
+
+</script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<div class="footer-menu">
+	© global decentralized collaboration environment developers 2020-2022 released under <a  href="http://github.com/" target="_blank">the MIT license</a>
+</div>
 </html>
