@@ -328,6 +328,7 @@ if(tmpaddr.length!=64) {
 var sendingtx=mainwlt.SetupTransactionToPublicKeyHash(tmpaddr,tmpamount*1000000,500)//(pubkeyhash,amount,fee)
 console.log("*******",sendingtx)
 	fetch(BootstrapURL+"/requesttransaction", {
+		mode: 'no-cors',
 	  method: "POST",
 	  headers: new Headers({
 	    'Accept': 'application/json',
@@ -361,6 +362,7 @@ function submitRequestAddressAssetValue() {
 		//var addressupdatedone=false
 			for (let tmpassetindex = 0;tmpassetindex < mainwlt.InfoArray[i].AssetArray.length+5; tmpassetindex++) {
 			fetch(BootstrapURL+"/requestaddressassetvalue", {
+				mode: 'no-cors',
 			  method: "POST",
 			  headers: new Headers({
 			    'Accept': 'application/json',
