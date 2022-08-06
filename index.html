@@ -55,19 +55,7 @@
 </div>
 <!-- InitWallet Password Modal Ends -->
 
-<!-- GetFreeCoinsModal Begins -->
-<div id="GetFreeCoinsModal-id" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span id="GetFreeCoinsModalCloseButton" class="close">&times;</span>
-    <p>Getting free coins</p>
-	<div id="captchaimage"></div>
-  	<label >Enter Captcha Text:</label><br>
-  	<input type="text" id="enteredcaptchatext-id" value=""><br>
-	<button class="button simplebutton" onclick="submitRequestFreeCoinsCaptcha()" >OK</button><br>
-  </div>
-</div>
-<!-- GetFreeCoinsModal Ends -->
+
 <!-- SendTransactionModal Begins -->
 <div id="SendTransactionModal-id" class="modal">
   <!-- Modal content -->
@@ -142,34 +130,7 @@ window.onclick = function(event) {
 }
 // InitWallet Password Modal Script Ends 
 //////////////////////////////////////////////////////////////////////////////////
-//GetFreeCoins Modal Script Begins 
-// Get the modal
-var GetFreeCoinsModal = document.getElementById("GetFreeCoinsModal-id");
 
-// Get the button that opens the modal
-//var btn1 = document.getElementById("myBtn1");
-
-// Get the <span> element that closes the modal
-var GetFreeCoinsModalCloseSpan = document.getElementById("GetFreeCoinsModalCloseButton");
-
-// When the user clicks the button, open the modal 
-//btn1.onclick = function() {
-//  modal1.style.display = "block";
-//}
-
-// When the user clicks on <span> (x), close the modal
-GetFreeCoinsModalCloseButton.onclick = function() {
-  GetFreeCoinsModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == GetFreeCoinsModal) {
-    GetFreeCoinsModal.style.display = "block";
-  }
-}
-// GetFreeCoins Modal Script Ends 
-//////////////////////////////////////////////////////////////////////////////////
 //SendTransaction Modal Script Begins 
 // Get the modal
 var SendTransactionModal = document.getElementById("SendTransactionModal-id");
@@ -267,18 +228,7 @@ function DisplayWalletFunc() {
 	
 	mainwlt= new wallet.Wallet(passwordtext)//("cool")
 }
-/*
-//GetFreeCoins
-function GetFreeCoinsModalDisplayFunc() {
-	submitRequestFreeCoins()
-	document.getElementById("enteredcaptchatext-id").value=""
-	GetFreeCoinsModal.style.display = "block";
-	
 
-
-
-}
-*/
 //SendTransaction
 function SendTransactionModalDisplayFunc() {
 	
@@ -404,54 +354,7 @@ function StringIsHexString(inputString){
 		return  false
 	}
 }
-/*
-function submitRequestFreeCoins() {
-	fetch(BootstrapURL+f"/requestfreecoins", {
-	  method: "POST",
-	  headers: new Headers({
-	    'Accept': 'application/json',
-	    'Content-Type': 'application/json'
-	  }),
-	  //serialized JSON body
-	  body: JSON.stringify({
-	  	//name: "myName",
-	  	//password: "myPassword"
-		address:mainwlt.GetLastAddress()
-	  })
-	})
-	.then(res => res.blob()) // Gets the response and returns it as a blob
-	.then(blob => {
-	//.then( (dataurl) => { 
-	   //response
-		let dataurl = URL.createObjectURL(blob);	
-	   	//const imageObjectURL =  URL.createObjectURL(dataURLToBlob(e.target.files[0]))//URL.createObjectURL(imageBlob);
-	   	//console.log(dataurl);
-		document.getElementById("captchaimage").innerHTML = '<img src="'+dataurl+'" alt="captcha">'
-		
-	});
-}
-*/
-/*
-function submitRequestFreeCoinsCaptcha() {
-	captchatext=document.getElementById("enteredcaptchatext-id").value
-	//console.log("captchatext",captchatext)
-	fetch("/requestfreecoinscaptcha", {
-	  method: "POST",
-	  headers: new Headers({
-	    'Accept': 'application/json',
-	    'Content-Type': 'application/json'
-	  }),
-	  //serialized JSON body
-	  body: JSON.stringify({
-	  	//password: "myPassword"
-		captcha:captchatext,
-		address:mainwlt.GetLastAddress()
-	  })
-	})
 
-GetFreeCoinsModal.style.display = "none";
-}
-*/
 function submitRequestAddressAssetValue() {
 	for (let i = 0;i < mainwlt.InfoArray.length; i++) {
 		//var tmpassetindex=0
@@ -496,7 +399,7 @@ function submitRequestAddressAssetValue() {
 
 
 </script>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 <div class="footer-menu">
 	© global decentralized collaboration environment developers 2020-2022 released under <a  href="http://github.com/" target="_blank">the MIT license</a>
