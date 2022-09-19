@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta name="description" content="Free Web tutorials">
-  <meta name="keywords" content="Nondeterministic, Decentralized, Applications, Decentralization, Collaboration,  Blockchain, Cryptocurrency, Web3">
+  <meta name="keywords" content="Dapps, Decentralized, Applications, Decentralization, Collaboration,  Blockchain, Cryptocurrency, Web3">
   <meta name="author" content="global decentralized collaboration environment developers">
   
  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
@@ -33,7 +33,7 @@
 
   <main>
   <br><br><br><br><h1>globaldce</h1>
-  <h2>A smart contract and decentralized applications platform built on reliable fundamentals</h2>
+  <h2>A decentralized applications platform built on reliable fundamentals.</h2>
   </main>
   <!meta name="viewport" content="width=1024">
  <!img src="background.png" style="width:100%;">
@@ -41,20 +41,64 @@
 <!h2><!This is heading 2><!/h2>
 
 
-<p2>Globaldce is a global decentralized collaboration environment that aims to provide reliable fundamentals for smart contract and decentralized applications.<br><br></p2>
+<p2>Globaldce is a global decentralized collaboration environment that aims to provide reliable fundamentals for decentralized applications.<br><br></p2>
 
 
 <br>
 <!p2><!><!br><!br><!/p2>
+<br>
+
+<!----------->
+<div class="container">
+  <button id="left-btn"><i class="arrow"></i></button>
+  <img id="carousel" src="" alt="">
+  <button id="right-btn"><i class="arrow"></i></button>
+</div>
+<script>
+  const img = document.getElementById('carousel');
+const rightBtn = document.getElementById('right-btn');
+const leftBtn = document.getElementById('left-btn');
+
+// Images are from unsplash
+let pictures = ['./Screenshot1.png','./Screenshot2.png','./Screenshot3.png','./Screenshot4.png','./Screenshot5.png'];
+
+img.src = pictures[0];
+let position = 0;
+
+const moveRight = () => {
+    if (position >= pictures.length - 1) {
+        position = 0
+        img.src = pictures[position];
+        return;
+    }
+    img.src = pictures[position + 1];
+    position++;
+}
+
+const moveLeft = () => {
+    if (position < 1) {
+        position = pictures.length - 1;
+        img.src = pictures[position];
+        return;
+    }
+    img.src = pictures[position - 1];
+    position--;
+}
+
+rightBtn.addEventListener("click", moveRight);
+leftBtn.addEventListener("click", moveLeft);
+</script>
+<!------------>
+<br>
 <p2>Download globaldce gateway :<br><br></p2>
 <button class="btn"><btn-text><a href="https://github.com/globaldce/globaldce-gateway/releases/download/v0.2.0/windows-amd64.zip"><i class="fa fa-windows">&nbsp;&nbsp;</i>Windows amd64</a></btn-text></button><br>
 <br><br>
 <br><br>
 <br><br>
 <p2><b>What is globaldce ?</b><br><br></p2>
-<p2>Even though  cryptocurrency  and blockchain technologies have the potential to disrupt every aspect of our daily life their use cases are currently still limited. Most real-world situations can not be tackled using existing smart contracts and dapps platforms and this due to the fact that building smart contracts and decentralized applications using existing platforms is like trying to building skyskrapers on sands.<br></p2>
+<p2>Even though  cryptocurrency  and blockchain technologies have the potential to disrupt every aspect of our daily life their use cases are currently still limited. Most real-world situations can not be tackled using existing dapps platforms and this due to the fact that building decentralized applications using existing platforms is like trying to building skyskrapers on sands.<br></p2>
 <br><br>
-<p2>Existing smart contracts and dapps platforms do not have built-in native decentralization, governance, privacy and scalability. And that led to painful and catastrophic situations for users.<br></p2>
+<p2>Existing dapps platforms do not have built-in native decentralization, governance, privacy and scalability. And that led to painful and catastrophic situations for users.<br></p2>
 <br>
 <ul>
   <li><p2>A lack of decentralization threatens the uncensored nature of blockchains<br></p2></li>
@@ -67,7 +111,6 @@
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 </body>
     
 <div class="footer-menu">
