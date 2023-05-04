@@ -1,0 +1,14 @@
+The globaldce reputation system leverage the globaldce native name registration. This system allows users holding a registered name to provide qualitative and quantitative ratings to each other following a transaction or exchange of data. The rating system is designed to assess the reliability and trustworthiness of specific registered names within the network. By leveraging this reputation system, users can gain greater confidence in their interactions with others in the network, leading to more efficient and trustworthy interactions.
+
+Furthermore, nodes that do not have a registered name or do not want to use a registered name can be rated be other nodes based on their behavior and performance within the network. Nodes in the globaldce P2P network can use a reliability score to rate the reliability of other nodes. This reliability score can be calculated based on a node's behavior, performance, and history within the network. 
+Here are few factors that can influence a node's IP based reputation in the globaldce network:
+* Uptime: Nodes that are consistently online and available are generally viewed as more reliable and trustworthy.
+* Network latency: Nodes that respond quickly and have low network latency are generally considered to be more reliable.
+* Transaction verification: Nodes that accurately and quickly verify transactions are viewed as more trustworthy.
+* Block propagation: Nodes that efficiently propagate newly mined blocks to the rest of the network are generally viewed as more reliable.
+* Consistency: Nodes that consistently follow the globaldce protocol rules and do not deviate are considered more trustworthy.
+However, it's worth noting that globaldce's P2P network is decentralized, and the IP based reputation of a node can vary depending on the perspective of other nodes in the network.
+
+Overall, nodes with a higher reputation score are generally more trusted and may be given preferential treatment when it comes to things like transaction propagation, block validation, peer discovery, ... 
+
+********************

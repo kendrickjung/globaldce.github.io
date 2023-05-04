@@ -85,9 +85,10 @@ body:hover {
      -ms-text-size-adjust: none;
      }
     main {
-    margin-top: 25%;
+    margin-top: 20%;
     margin-bottom: 20%;
     padding-left: 20px;
+    padding-right: 20px;
     }
     .floating-menu {
       
@@ -121,8 +122,9 @@ body:hover {
      }
      main {
       margin-top: 5%;
-      margin-bottom: 20%;
+      margin-bottom: 10%;
       padding-left: 20px;
+      padding-right: 20px;
       }
     .floating-menu br {
       display: none; /* hide the BR tag for wider screens (i.e. disable the line break) */
