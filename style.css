@@ -129,7 +129,7 @@ body:hover {
       /*background-image: url("../imgcity.png");*/
       background-color: #161616;
        color: #FFFFFF;
-       font-size: 1.5em;
+       font-size: 1.2em;
      /*transition: background-color 0.7s linear;*/
      padding: 50px;
      -webkit-text-size-adjust: none;
@@ -156,7 +156,7 @@ body:hover {
   padding-bottom: 2%;
       width: 100%;
       
-      font-size: 1.5em;
+      font-size: 1.3em;
       /*z-index: 100;*/
       position: fixed;
       top: 0%;
