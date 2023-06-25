@@ -1,39 +1,12 @@
 <!DOCTYPE html>
-
-
-  
-
 <html>
 <head>
-  <title> Build </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
-  <meta name="description" content="Docs">
-  <meta name="keywords" content="Decentralization, Collaboration,  Blockchain, Cryptocurrency, Web3">
-  <meta name="author" content="global decentralized collaboration environment developers">
-  
- <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0"><!content="width=1024"> 
 
-  <link rel="stylesheet" href="../../style.css"/>
-  <link rel="icon" type="image/x-icon" href="../Icon.png">
-  <nav class="floating-menu">
-  <a href="../../index.html">DOWNLOAD</a><br>
-  <a href="../learn/introduction.html">LEARN</a><br>
-  <a href="./build.html"><goldenlink>BUILD</goldenlink></a><br>
-  <a href="../news/news.html">NEWS</a><br>
-  <a href="https://github.com/globaldce/globaldce-gateway">GITHUB</a><br>
-  </nav>
-
+<title> Build </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 </head>
-
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
 
-  <main>
-    <br><br><br><br><h1>globaldce</h1>
-
-  </main>
 
 <!************************>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
@@ -118,7 +91,7 @@
 	</code></pre>    
 
     <h3>Architecture:</h3>
-    <p>At the core of GlobalDCE's architecture lies a public ledger known as the blockchain, which chronologically stores all processed transactions.<p>
+    <p>At the core of GlobalDCE's architecture lies a public ledger known as the blockchain, which chronologically stores all processed transactions. These<p>
 	<pre><code class="language-go">
 	From https://github.com/globaldce/globaldce-gateway/blob/main/mainchain/mainblock.go
 
@@ -137,75 +110,55 @@
 		Nonce uint32
 		Hash utility.Hash
 	}
+
 	</code></pre>  
-<p>Version:</p>
+<h2>Version:</h2>
 <p>The version field stores the numerical value indicating the block format version. Currently, the block format version is 1, and blocks of any other version are neither relayed nor mined.</p>
 
-<p>Prevblockhash:</p>
+<h2>Prevblockhash:</h2>
 <p>This field holds the reference to the previous block.</p>
 
 <p>To calculate the Prevblockhash, a double-SHA3-256 hash is performed on the concatenation of all elements in the previous block header: double-SHA3-256(Version||Prevblockhash||Roothash||Timestamp||Bits||nNonce).</p>
 
 <p>The reference acts as a link in the blockchain, establishing a chronological order for blocks and the transactions they contain.</p>
 
-<p>Roothash:</p>
-<p>This field stores the root of the Merkle hash tree. It ensures the integrity of all transactions included in the block. The parameters used for computing the tree are double-SHA256 as the hashing algorithm, and raw transactions serve as the data blocks.</p>
+<h2>Roothash:</h2>
+<p>This field stores the root of the Merkle hash tree. It ensures the integrity of all transactions included in the block and is computed using the specified scheme described in .... The parameters used for computing the tree are double-SHA256 as the hashing algorithm, and raw transactions serve as the data blocks.</p>
 
-<p>Time:</p>
+<h2>nTime:</h2>
 <p>The time field stores the timestamp in UNIX format, representing the approximate time of block creation. Since the timestamp is a parameter involved in block mining, it is fixed at the beginning of the mining process.</p>
 
-<p>Bits:</p>
-<p>The Bits field stores a compact representation of a target value T used in the proof-of-work puzzle. The target value is a 256-bit number, but its compact representation is only 32 bits long and encoded with 8 hex digits. The target value can be derived from its compact hexadecimal representation.</p>
+<h2>nBits:</h2>
+<p>The nBits field stores a compact representation of a target value T used in the proof-of-work puzzle (refer to Sect. 5.2). The target value is a 256-bit number, but its compact representation is only 32 bits long and encoded with 8 hex digits. The target value can be derived from its compact hexadecimal representation using the formula...</p>
 
-<p>The very first block, the genesis block, was mined using the maximum target. To ensure a constant rate of one block per 10 minutes throughout the network, the target T is recalculated every 2016 blocks. This recalculation is based on the sum of time (t sum) it took to mine the last 2015 blocks, accounting for an off-by-one error.</p>
+<p>The upper bound for the target is defined as ..., while there is no lower bound. The very first block, the genesis block, was mined using the maximum target. To ensure a constant rate of one block per 10 minutes throughout the network, the target T is recalculated every 2016 blocks. This recalculation is based on the sum of time (t sum) it took to mine the last 2015 blocks, accounting for an off-by-one error [6]...</p>
 
-<p>Note that t sum is calculated as the difference between the timestamps (Time) in the block header.</p>
+<p>Note that t sum is calculated as the difference between the timestamps (nTime) in the block header.</p>
 
-<p>Nonce:</p>
+<h2>Nonce:</h2>
 <p>The nonce field contains arbitrary data and is used as a source of randomness for solving the proof-of-work problem. However, due to its small size of 4 bytes, it may not provide sufficient variation to find a solution.</p>
 
-	<pre><code class="language-go">
-	From https://github.com/globaldce/globaldce-gateway/blob/main/utility/transaction.go
+<h2>Transactions:</h2>
+<p>There are two types of transactions: coinbase transactions and regular transactions. Coinbase transactions are special transactions that introduce new Bitcoins into the system. They are included as the first transaction in every block and serve as a reward for solving the proof-of-work puzzle. On the other hand, regular transactions are used to transfer existing Bitcoins between different users. From an architectural perspective, a coinbase transaction can be considered a special case of a regular transaction. Therefore, we will discuss the structure of a regular transaction first, followed by the differences between coinbase and regular transactions.</p>
 
-	type TxOut struct {
-		Value uint64 // in milion globals
-		//Address Hash
-		Bytecode []byte
-	}
-	type TxIn struct {
-		Hash Hash
-		Index uint32
-		Bytecode []byte
-		Signature []byte
-	}
-
-	type Transaction struct {
-		Version int32
-		Vin []TxIn
-		Vout []TxOut
-	}
-	</code></pre>  
-
-
-<p>Transactions:</p>
-<p>There are two types of transactions: reward transactions and regular transactions. Reward transactions are special transactions that introduce new GlobalDCE coins into the system. They are included as the first transaction in every block and serve as a reward for solving the proof-of-work puzzle. On the other hand, regular transactions are used to transfer existing globaldce between different users/dapps. From an architectural perspective, a reward transaction can be considered a special case of a regular transaction. Therefore, we will discuss the structure of a regular transaction first, followed by the differences between reward and regular transactions.</p>
-
-<p>Regular Transactions:</p>
-<p>As mentioned earlier, each block in the blockchain contains a set of transactions. A transaction consists of a transaction version (Version), a vector of inputs (Vin), and a vector of outputs (Vout), with the count of inputs and outputs specified beforehand.</p>
+<h3>Regular Transactions:</h3>
+<p>As mentioned earlier, each block in the blockchain contains a set of transactions. A transaction consists of a transaction version (Version), a vector of inputs (vin), and a vector of outputs (vout), with the count of inputs and outputs specified beforehand.</p>
 
 
 <!************************>
 <script>
     Prism.highlightAll();
 </script>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
-    
-<div class="footer-menu">
-       © global decentralized collaboration environment developers 2020-2022 released under <a  href="http://github.com/" target="_blank">the MIT license</a>
-</div>
-  
 </html>
 
 
-<!DOCTYPE html>
+
+
+
+
+
+
+
+
