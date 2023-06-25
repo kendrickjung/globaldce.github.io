@@ -204,31 +204,31 @@ color: white;
   text-decoration: none;
 }
 
-/*golden {
+golden {
   color: blue;
   font-family: sans-serif;
   font-size: 300%;
   text-align: center;
-  color: #FFDF00;
-}*/
+}
 
 h1 {
   font-family: sans-serif;
-  /*font-size:200%;
-  text-align: left;
-  color: #FFDF00;*/
+  /*font-size:200%;*/
+  /*text-align: left;*/
+  /*color: #FFDF00;*/
 }
 h2 {
   font-family: sans-serif;
-  /*font-size:100%;
-  text-align: left;
-  color: #FFDF00;*/
+  /*font-size:100%;*/
+  /*text-align: left;*/
+  /*color: #FFDF00;*/
 }
 h3 {
   font-family: sans-serif;
-  /*font-size:100%;
-  text-align: left;
-  color: #FFDF00;*/
+  /*font-size:100%;*/
+  /*text-align: left;*/
+  /*color: #FFDF00;*/
+/*color: white;*/
 }
 
 p2 {
@@ -384,3 +384,11 @@ button .arrow {
 #left-btn .arrow {
   transform: rotate(135deg);
 }
+/****************************************/
+/****************************************/
+/* Example dark mode styles */
+/* Custom code area styles */
+pre[class*="language-go"] {
+  background-color: #EEEEEE; /* Custom background color */
+}
+
