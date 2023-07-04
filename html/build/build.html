@@ -15,7 +15,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!content="width=1024"> 
 
   <link rel="stylesheet" href="../../style.css"/>
-  <link rel="icon" type="image/x-icon" href="../Icon.png">
+  <link rel="icon" type="image/x-icon" href="../../Icon.png">
   <nav class="floating-menu">
   <a href="../../index.html">DOWNLOAD</a><br>
   <a href="../learn/introduction.html">LEARN</a><br>
@@ -36,10 +36,21 @@
   </main>
 
 <!************************>
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
-   
     
+ 
+
+<noscript>
+       <div class="warning">
+      JavaScript is disabled in your browser. Please enable JavaScript to continue.
+    </div>
+</noscript>
     <p>To access the specifications of the GlobalDCE protocol, you can refer to the dedicated "GlobalDCE Protocol" section. However, it is important to have a solid understanding of GlobalDCE concepts beforehand. This section aims to provide a formal and easily understandable specification of the core GlobalDCE protocol.</p>
     <p>Note that to test the go code provided here you must first create a go module and and do go get github.com/globaldce/globaldce-gateway as follows:</p>
     <p>go mod init example.com/m</p>
@@ -51,7 +62,7 @@
     <p>Consider Alice and Bob as two parties engaging in communication. Alice can request Bob to perform a specific amount of computational work for each message he sends. To achieve this, Alice can ask Bob to provide a string that, when hashed, meets a predefined structure. Finding such a string entails a certain success probability, which determines the average amount of work Bob needs to invest in order to find a valid solution.</p>
     
     <p>In the GlobalDCE proof of work, the hashing algorithm employed is double-SHA3-256 (SHA3-256(SHA3-256)) and the predefined structure requires the resulting hash to be less than or equal to a target value, denoted as Target.</p>
-
+	<div class="codediv">
 	<pre><code class="language-go">
 	package main
 	import (
@@ -87,7 +98,7 @@
 
 	}
 	</code></pre>
-    
+	</div>
 
     <p>This simple evaluation allows for quick verification of the nonce's validity.</p>
     
@@ -97,7 +108,7 @@
     <p>In the previously discussed example, we assumed a scenario where the number of data blocks is a power of two, resulting in a complete binary tree. However, in cases where nodes are missing, certain measures need to be taken to maintain the tree's structure. Here a simple method is employed. When constructing a row in the tree (except for the root), if there is an odd number of nodes, the last node is duplicated. As a result, every intermediate row in the tree always contains an even number of nodes, ensuring that each node (except the leaves) has exactly two children.</p>
     
     <p>For instance, when there are only three data blocks, and the computation of the fourth node in the second-to-last row lacks a child, the last node is duplicated, and the computation proceeds as in the previous example. The same rule is applied whenever an odd number of nodes occurs at any other point during the computation.</p>
-
+	<div class="codediv">
 	<pre><code class="language-go">
 	package main
 
@@ -116,9 +127,10 @@
 		applog.Notice("hashes root %x %x", root,hashes[0])
 	}
 	</code></pre>    
-
+	</div>
     <h3>Architecture:</h3>
     <p>At the core of GlobalDCE's architecture lies a public ledger known as the blockchain, which chronologically stores all processed transactions.<p>
+	<div class="codediv">
 	<pre><code class="language-go">
 	From https://github.com/globaldce/globaldce-gateway/blob/main/mainchain/mainblock.go
 
@@ -137,14 +149,15 @@
 		Nonce uint32
 		Hash utility.Hash
 	}
-	</code></pre>  
+	</code></pre> 
+	</div> 
 <p>Version:</p>
 <p>The version field stores the numerical value indicating the block format version. Currently, the block format version is 1, and blocks of any other version are neither relayed nor mined.</p>
 
 <p>Prevblockhash:</p>
 <p>This field holds the reference to the previous block.</p>
 
-<p>To calculate the Prevblockhash, a double-SHA3-256 hash is performed on the concatenation of all elements in the previous block header: double-SHA3-256(Version||Prevblockhash||Roothash||Timestamp||Bits||nNonce).</p>
+<p>To calculate the Prevblockhash, a double-SHA3-256 hash is performed on the concatenation of all elements in the previous block header: double-SHA3-256(Version||Prevblockhash||Roothash||Timestamp||Bits||Nonce).</p>
 
 <p>The reference acts as a link in the blockchain, establishing a chronological order for blocks and the transactions they contain.</p>
 
@@ -163,13 +176,12 @@
 
 <p>Nonce:</p>
 <p>The nonce field contains arbitrary data and is used as a source of randomness for solving the proof-of-work problem. However, due to its small size of 4 bytes, it may not provide sufficient variation to find a solution.</p>
-
+	<div class="codediv">
 	<pre><code class="language-go">
 	From https://github.com/globaldce/globaldce-gateway/blob/main/utility/transaction.go
 
 	type TxOut struct {
 		Value uint64 // in milion globals
-		//Address Hash
 		Bytecode []byte
 	}
 	type TxIn struct {
@@ -185,7 +197,7 @@
 		Vout []TxOut
 	}
 	</code></pre>  
-
+	</div>
 
 <p>Transactions:</p>
 <p>There are two types of transactions: reward transactions and regular transactions. Reward transactions are special transactions that introduce new GlobalDCE coins into the system. They are included as the first transaction in every block and serve as a reward for solving the proof-of-work puzzle. On the other hand, regular transactions are used to transfer existing globaldce between different users/dapps. From an architectural perspective, a reward transaction can be considered a special case of a regular transaction. Therefore, we will discuss the structure of a regular transaction first, followed by the differences between reward and regular transactions.</p>
